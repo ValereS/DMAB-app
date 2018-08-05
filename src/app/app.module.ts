@@ -9,22 +9,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './main-frame/home/home.component';
-import { LoginComponent } from './main-frame/login/login.component';
+import { MainFrameModule } from './main-frame/main-frame.module';
 
 
 @NgModule({
    declarations: [
       AppComponent,
       HeaderComponent,
-      FooterComponent,
-      HomeComponent,
-      LoginComponent
+      FooterComponent
    ],
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
       AppRoutingModule,
+      MainFrameModule,
       NgbModule.forRoot(
       )
       ],
