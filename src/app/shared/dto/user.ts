@@ -1,4 +1,5 @@
 export interface User {
-  id: String;
-  name: String;
+  id: string;
+  nickname: string;
+  password: string;
 }
