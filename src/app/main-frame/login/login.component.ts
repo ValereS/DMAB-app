@@ -14,9 +14,6 @@ export class LoginComponent implements OnInit {
 
   public formLogin: FormGroup;
 
-  public user: User;
-  private mockSesame = '013';
-
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
