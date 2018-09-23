@@ -13,54 +13,42 @@ import { User } from '../../shared/dto/user';
 export class LoginComponent implements OnInit {
 
   public formLogin: FormGroup;
-  public fb: FormBuilder;
-  public ls: LoginService;
-  public ds: DataService;
-  public router: Router;
 
   public user: User;
   private mockSesame = '013';
 
   constructor(
-    formBuilder: FormBuilder,
-    loginService: LoginService,
-    dataService: DataService,
-    router: Router
+    private formBuilder: FormBuilder,
+    private loginService: LoginService,
+    private router: Router,
+    private dataService: DataService
   ) {
-    this.fb = formBuilder;
-    this.ls = loginService;
-    this.ds = dataService;
-    this.router = router;
   }
 
   ngOnInit() {
-    this.formLogin = this.fb.group({
+    this.formLogin = this.formBuilder.group({
       identifiant: new FormControl('', [Validators.required, Validators.maxLength(15)]),
       motDePasse: new FormControl('', [Validators.required, Validators.maxLength(30)])
     });
   }
 
-
-  /* JE DOIS TRAVAILLER SUR LA PARTIE APPEL DE SERVICE PUIS MOCK POUR FAIRE COMME SI L'UTILISATEUR S'ETAIT CONNECTE */
-
   onSubmit() {
     if (this.formLogin.valid) {
-      const identifiant: string = this.formLogin.get('identifiant').value;
-      const motDePasse: string = this.formLogin.get('motDePasse').value;
-      if (this.checkAuthorization(identifiant, motDePasse)) {
-        this.ds.$user = this.user;
-        this.ds.$user.nickname = identifiant;
-        this.router.navigate(['home']);
-      }
+      this.login(this.formLogin.get('identifiant').value, this.formLogin.get('motDePasse').value);
     }
   }
 
-  checkAuthorization(id: string, pwd: string): boolean {
-
-    return pwd === this.mockSesame ? true : false;
-  }
-
-  login() {
-
+  login(id: string, pwd: string) {
+    this.loginService.getUser(id, pwd).subscribe(
+      data => {
+        if (data.password === pwd) {
+          this.dataService.$user = data;
+          this.router.navigate(['']);
+        }
+      },
+      error => {
+        console.log('##login ## cant find user');
+      }
+    );
   }
 }
