@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './main-frame/home/home.component';
 import { LoginComponent } from './main-frame/login/login.component';
+import { MainFrameModule } from './main-frame/main-frame.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,6 +27,9 @@ import { LoginComponent } from './main-frame/login/login.component';
       BrowserModule,
       BrowserAnimationsModule,
       AppRoutingModule,
+      MainFrameModule,
+      FormsModule,
+      ReactiveFormsModule,
       NgbModule.forRoot(
       )
       ],
