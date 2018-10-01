@@ -1,0 +1,64 @@
+{
+  "adherents": [
+    {
+      "id": "01",
+      "firstname": "Gael",
+      "lastname": "Thomas",
+      "birthdayDate": "2000-01-01",
+      "inscriptionDate": "2017-01-01",
+      "gender": "homme",
+      "postalCode": "75012",
+      "town": "Paris"
+    },
+    {
+      "id": "02",
+      "firstname": "Pasquier",
+      "lastname": "Pasqua",
+      "birthdayDate": "1900-01-01",
+      "inscriptionDate": "2016-01-01",
+      "gender": "homme",
+      "postalCode": "75012",
+      "town": "Paris"
+    },
+    {
+      "id": "03",
+      "firstname": "Pierrette",
+      "lastname": "Thomas",
+      "birthdayDate": "1978-01-01",
+      "inscriptionDate": "2017-06-01",
+      "gender": "femme",
+      "postalCode": "75012",
+      "town": "Paris"
+    },
+    {
+      "id": "04",
+      "firstname": "Georges",
+      "lastname": "Jungle",
+      "birthdayDate": "1950-01-01",
+      "inscriptionDate": "2018-01-01",
+      "gender": "homme",
+      "postalCode": "75012",
+      "town": "Paris"
+    },
+    {
+      "id": "05",
+      "firstname": "Amandine",
+      "lastname": "DuneOeufSaink",
+      "birthdayDate": "2005-01-01",
+      "inscriptionDate": "2015-01-01",
+      "gender": "ours",
+      "postalCode": "75012",
+      "town": "Paris"
+    },
+    {
+      "id": "06",
+      "firstname": "Philippe",
+      "lastname": "DeChay",
+      "birthdayDate": "1990-01-01",
+      "inscriptionDate": "2014-01-01",
+      "gender": "homme",
+      "postalCode": "91250",
+      "town": "Saint-rémy-les-chevreuses"
+    }
+  ]
+}

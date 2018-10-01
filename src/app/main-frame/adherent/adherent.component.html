@@ -1,0 +1,30 @@
+<h1>
+  adherent works!
+</h1>
+
+<table class="table table-sm table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Age</th>
+      <th scope="col">Date d'inscription</th>
+      <th scope="col">Code postal</th>
+      <th scope="col">Ville</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let adherent of adherents">
+      <th scope="row">{{adherent.id}}</th>
+      <td>{{adherent.lastname}}</td>
+      <td>{{adherent.firstname}}</td>
+      <td>{{adherent.gender}}</td>
+      <td>{{adherent.birthdayDate | age}}</td>
+      <td>{{adherent.inscriptionDate | date }}</td>
+      <td>{{adherent.postalCode}}</td>
+      <td>{{adherent.town}}</td>
+    </tr>
+  </tbody>
+</table>

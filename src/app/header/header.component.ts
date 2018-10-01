@@ -14,7 +14,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.routes = new Map<String, String>([
       [ 'home', 'Home' ],
-      [ 'login', 'Login' ]
+      [ 'login', 'Login' ],
+      [ 'adherent', 'Adherent' ]
     ]);
   }
 
