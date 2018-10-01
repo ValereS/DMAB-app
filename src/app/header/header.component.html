@@ -1,8 +1,10 @@
-<p>
-  header works!
-</p>
-<nav class="nav-bar">
-  <a routerLink="">{{routes.get("home")}}</a>
-  <a routerLink="login">{{routes.get("login")}}</a>
-  <a routerLink="adherent">{{routes.get("adherent")}}</a>
+<nav class="row navbar navbar-expand-lg sticky-top navbar-dark bg-dark justify-content-between">
+  <div class="col-lg-10">
+    <a class="navbar-brand" routerLink="">{{routes.get("home")}}</a>
+    <a class="navbar-brand" routerLink="adherent">{{routes.get("adherent")}}</a>
+  </div>
+  <div class="col-lg-2 dmab_login">
+    <a *ngIf="dataService.$user != null" class="navbar-brand" routerLink="login">Logout</a>
+    <a *ngIf="dataService.$user == null" class="navbar-brand" routerLink="login">{{routes.get("login")}}</a>
+  </div>
 </nav>
