@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../shared/dataService/data.service';
 
 @Component({
   selector: 'dmab-header',
@@ -9,12 +10,15 @@ export class HeaderComponent implements OnInit {
 
   public routes: Map<String, String>;
 
-  constructor() { }
+  constructor(
+    public dataService: DataService
+  ) { }
 
   ngOnInit() {
     this.routes = new Map<String, String>([
       [ 'home', 'Home' ],
-      [ 'login', 'Login' ]
+      [ 'login', 'Login' ],
+      [ 'adherent', 'Adherent' ]
     ]);
   }
 

@@ -1,3 +1,11 @@
-<h1>
-  login works!
-</h1>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()" [formGroup]="formLogin">
+  <div class="form-group">
+    <fieldset>
+      <label for="identifiant">Identifiant</label>
+      <input id="identifiant" class="form-control dmab_halfSize" type="text" formControlName="identifiant" />
+      <label for="motDePasse">Mot de Passe</label>
+      <input id="motDePasse" class="form-control dmab_halfSize" type="password" formControlName="motDePasse" />
+    </fieldset>
+  </div>
+  <button type="submit">Valider</button>
+</form>
