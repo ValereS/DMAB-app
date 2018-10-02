@@ -1,26 +1,25 @@
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { PageNotFoundComponent } from './page-not-found.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('PageNotFoundComponent', () => {
-
-  let fixture: ComponentFixture<PageNotFoundComponent>;
   let component: PageNotFoundComponent;
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      schemas: [NO_ERRORS_SCHEMA],
-      providers: [
-      ],
-      declarations: [PageNotFoundComponent]
-    });
+  let fixture: ComponentFixture<PageNotFoundComponent>;
 
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ PageNotFoundComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
-
+    fixture.detectChanges();
   });
 
-  it('should be able to create component instance', () => {
-    expect(component).toBeDefined();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
-
 });

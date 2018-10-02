@@ -20,7 +20,6 @@ import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '../../node_modules/@angular/common';
 registerLocaleData(localeFr);
 
-
 @NgModule({
    declarations: [
       AppComponent,
