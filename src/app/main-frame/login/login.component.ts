@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators,  } from '@angular/form
 import { DataService } from '../../shared/dataService/data.service';
 import { Router } from '@angular/router';
 import { LoginService } from './login-service/login.service';
-import { User } from '../../shared/dto/user';
+import { LoggerService } from '../../shared/logger/logger.service';
 
 @Component({
   selector: 'dmab-login',
@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private loginService: LoginService,
     private router: Router,
-    private dataService: DataService
+    private dataService: DataService,
+    private logger: LoggerService
   ) {
   }
 
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
         }
       },
       error => {
-        console.log('##login ## cant find user');
+        this.logger.error("#LOGIN# can't find user");
       }
     );
   }

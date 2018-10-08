@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Adherent } from '../../shared/dto/adherent';
 import { AdherentService } from './service/adherent.service';
 import { AgePipe } from '../../shared/pipe/age.pipe';
+import { LoggerService } from '../../shared/logger/logger.service';
 
 @Component({
   selector: 'dmab-adherent',
@@ -14,7 +15,8 @@ export class AdherentComponent implements OnInit {
   adherents: Array<Adherent>;
 
   constructor(
-    private adherentService: AdherentService
+    private adherentService: AdherentService,
+    private logger: LoggerService
   ) {}
 
   ngOnInit() {
@@ -27,8 +29,8 @@ export class AdherentComponent implements OnInit {
       fetched => {
         this.adherents = fetched.adherents;
       },
-      error => console.log('##adherent## not fetched'),
-      () => console.log("Adherents:", this.adherents)
+      error => this.logger.error('##adherent## not fetched'),
+      () => this.logger.info("Adherents:", this.adherents)
     );
   }
 }

@@ -3,6 +3,7 @@ import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angul
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { User } from '../../../shared/dto/user';
+import { LoggerService } from '../../../shared/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +19,13 @@ export class LoginService {
   );
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private logger: LoggerService
   ) { }
 
   getUser(username: string, pwd: string): Observable<User> {
     const body = { 'nickname': username, 'motDePasse': pwd };
-    console.log("##login## getting login for :", username);
+    this.logger.info("##login## getting login for :", username);
     return this.http.get<User>(this.stubUser, {headers: this.requestHeaders})
     .pipe(
       catchError(this.handleError)
