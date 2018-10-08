@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.logger.fatal('trala');
     if (this.formLogin.valid) {
       this.login(this.formLogin.get('identifiant').value, this.formLogin.get('motDePasse').value);
     }
