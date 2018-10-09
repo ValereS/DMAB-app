@@ -9,7 +9,7 @@ import { Adherent, Adherents } from '../../../shared/dto/adherent';
 })
 export class AdherentService {
 
-  private stubUser = '../../../../../assets/stub/json/adherent.json';
+  private stubUser = 'assets/stub/json/adherent.json';
   private requestHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
     Accept: 'application/json'
