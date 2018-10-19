@@ -1,0 +1,25 @@
+#loadingLogo {
+  width: 100%;
+}
+
+.bgLogo {
+  background-color: #fff;
+  z-index: -1;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+}
+
+.fillingLogo {
+  background-color: #2aa12a;
+  z-index: 0;
+  width: 400px;
+  position: absolute;
+  bottom: 0;
+}
+
+.ftLogo {
+  top: 0;
+  z-index: 1;
+  position: absolute;
+}

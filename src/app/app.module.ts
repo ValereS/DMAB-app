@@ -18,6 +18,8 @@ import { MainFrameComponent } from './main-frame/main-frame.component';
 
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '../../node_modules/@angular/common';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { LoadinglogoComponent } from './welcome/loadinglogo/loadinglogo.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -25,7 +27,9 @@ registerLocaleData(localeFr);
       AppComponent,
       HeaderComponent,
       FooterComponent,
-      MainFrameComponent
+      MainFrameComponent,
+      WelcomeComponent,
+      LoadinglogoComponent
    ],
    imports: [
       BrowserModule,
