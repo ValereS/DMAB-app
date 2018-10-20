@@ -1,3 +1,8 @@
-<dmab-header></dmab-header>
-<dmab-main-frame></dmab-main-frame>
-<dmab-footer></dmab-footer>
+<div *ngIf="!loadComplete">
+  <dmab-welcome></dmab-welcome>
+</div>
+<div [hidden]="!loadComplete">
+  <dmab-header></dmab-header>
+  <dmab-main-frame></dmab-main-frame>
+  <dmab-footer></dmab-footer>
+</div>
