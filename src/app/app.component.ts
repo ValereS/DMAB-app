@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     this.loadComplete = false;
     setTimeout(() => {
       this.loadComplete = true;
-    }, 6000);
+    }, 3000);
   }
 
 }

@@ -26,7 +26,7 @@ import {
           height: "500px"
         })
       ),
-      transition("empty => full", [animate("4s")])
+      transition("empty => full", [animate("2s")])
     ])
   ]
 })

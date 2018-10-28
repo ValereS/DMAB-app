@@ -1,1 +1,2 @@
-<dmab-adherent-details></dmab-adherent-details>
+<dmab-adherent-details [adherents]="adherents"></dmab-adherent-details>
+<dmab-adherent-charts *ngIf="dataLoaded" [adherents]="adherents"></dmab-adherent-charts>
