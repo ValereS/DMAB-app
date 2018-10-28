@@ -5,21 +5,21 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdherentComponent } from './adherent/adherent.component';
-import { AgePipe } from '../shared/pipe/age.pipe';
+import { AdherentModule } from './adherent/adherent.module';
+import { PipeModule } from '../shared/pipe/pipe.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AdherentModule,
+    PipeModule
   ],
   declarations: [
     PageNotFoundComponent,
     HomeComponent,
-    LoginComponent,
-    AdherentComponent,
-    AgePipe
+    LoginComponent
   ]
 })
 export class MainFrameModule { }

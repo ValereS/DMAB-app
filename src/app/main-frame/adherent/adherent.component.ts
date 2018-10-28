@@ -11,26 +11,11 @@ import { LoggerService } from '../../shared/logger/logger.service';
 })
 export class AdherentComponent implements OnInit {
 
-  informationsLoaded: boolean;
-  adherents: Array<Adherent>;
-
   constructor(
     private adherentService: AdherentService,
     private logger: LoggerService
   ) {}
 
   ngOnInit() {
-    this.informationsLoaded = false;
-    this.getInformations();
-  }
-
-  getInformations(): void {
-    this.adherentService.getAdherents().subscribe(
-      fetched => {
-        this.adherents = fetched.adherents;
-      },
-      error => this.logger.error('##adherent## not fetched'),
-      () => this.logger.info("Adherents:", this.adherents)
-    );
   }
 }
