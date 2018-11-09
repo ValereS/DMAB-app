@@ -1,2 +1,19 @@
-<dmab-adherent-details [adherents]="adherents"></dmab-adherent-details>
-<dmab-adherent-charts *ngIf="dataLoaded" [adherents]="adherents"></dmab-adherent-charts>
+<ng-container *ngIf="dataLoaded">
+  <ngb-tabset justify="justified">
+    <ngb-tab [title]="title[0]">
+      <ng-template ngbTabContent>
+        <dmab-adherent-general [adherents]="adherents"></dmab-adherent-general>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab [title]="title[1]">
+      <ng-template ngbTabContent>
+        <dmab-adherent-charts [adherents]="adherents"></dmab-adherent-charts>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab [title]="title[2]">
+      <ng-template ngbTabContent>
+        <dmab-adherent-crud [adherents]="adherents"></dmab-adherent-crud>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</ng-container>

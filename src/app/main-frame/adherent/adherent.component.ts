@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Adherent } from '../../shared/dto/adherent';
 import { AdherentService } from './service/adherent.service';
-import { AgePipe } from '../../shared/pipe/age.pipe';
-import { LoggerService } from '../../shared/logger/logger.service';
+import { LoggerService } from '../../core/logger/logger.service';
+import { ServiceConstants } from '../../util/serviceConstants';
 
 @Component({
   selector: 'dmab-adherent',
@@ -13,6 +13,7 @@ export class AdherentComponent implements OnInit {
 
   dataLoaded: boolean;
   adherents: Array<Adherent>;
+  title: string[] = ["Vue d'ensemble", "Graphiques", "Ajouter un membre"];
 
   constructor(
     private adherentService: AdherentService,
@@ -27,9 +28,13 @@ export class AdherentComponent implements OnInit {
   getInformations(): void {
     this.adherentService.getAdherents().subscribe(
       fetched => {
-        this.adherents = fetched.adherents;
+        if (fetched.error === ServiceConstants.ZERO) {
+          this.adherents = fetched.result;
+        } else {
+          this.logger.info(fetched.error, fetched.message);
+        }
       },
-      error => this.logger.error('##adherent## not fetched'),
+      error => this.logger.error('##adherent## not fetched: '),
       () => {
         this.dataLoaded = true;
         this.logger.info("Adherents:", this.adherents);

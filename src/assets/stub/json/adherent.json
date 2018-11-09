@@ -1,5 +1,7 @@
 {
-  "adherents": [
+  "error": "0",
+  "message": "",
+  "result": [
     {
       "id": "01",
       "firstname": "Gael",
@@ -14,7 +16,7 @@
       "id": "02",
       "firstname": "Pasquier",
       "lastname": "Pasqua",
-      "birthdayDate": "1900-01-01",
+      "birthdayDate": "1950-08-10",
       "inscriptionDate": "2016-01-01",
       "gender": "homme",
       "postalCode": "75012",
@@ -24,7 +26,7 @@
       "id": "03",
       "firstname": "Pierrette",
       "lastname": "Thomas",
-      "birthdayDate": "1978-01-01",
+      "birthdayDate": "1950-06-01",
       "inscriptionDate": "2017-06-01",
       "gender": "femme",
       "postalCode": "75012",
@@ -57,6 +59,16 @@
       "birthdayDate": "1990-01-01",
       "inscriptionDate": "2014-01-01",
       "gender": "homme",
+      "postalCode": "91250",
+      "town": "Saint-rémy-les-chevreuses"
+    },
+    {
+      "id": "07",
+      "firstname": "Philippette",
+      "lastname": "DeChay",
+      "birthdayDate": "1990-01-01",
+      "inscriptionDate": "2014-01-01",
+      "gender": "femme",
       "postalCode": "91250",
       "town": "Saint-rémy-les-chevreuses"
     }

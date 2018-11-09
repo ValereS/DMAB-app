@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdherentDetailsComponent } from './adherent-details.component';
+import { AdherentGeneralComponent } from './adherent-general.component';
 
 describe('AdherentDetailsComponent', () => {
-  let component: AdherentDetailsComponent;
-  let fixture: ComponentFixture<AdherentDetailsComponent>;
+  let component: AdherentGeneralComponent;
+  let fixture: ComponentFixture<AdherentGeneralComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdherentDetailsComponent ]
+      declarations: [ AdherentGeneralComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdherentDetailsComponent);
+    fixture = TestBed.createComponent(AdherentGeneralComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
