@@ -61,7 +61,7 @@ export class AdherentChartsComponent implements OnInit {
   }
 
   pickColorSet() {
-    this.dataChartGender.datasets[0].backgroundColor = this.chartService.colorSet4;
+    this.dataChartGender.datasets[0].backgroundColor = this.chartService.colorSet5;
     this.dataChartAge.datasets[0].backgroundColor = this.chartService.colorSet4[0];
   }
 
@@ -70,42 +70,11 @@ export class AdherentChartsComponent implements OnInit {
     this.populateChartAge();
   }
 
-  // findChartGender(adherent: Array<Adherent>) {
-  //   let HFNAb: number[];
-  //   HFNAb = [0, 0, 0, 0];
-  //   adherent.forEach(element => {
-  //     switch (element.gender) {
-  //       case Gender.homme:
-  //         HFNAb[0] += 1;
-  //         break;
-  //       case Gender.femme:
-  //         HFNAb[1] += 1;
-  //         break;
-  //       case Gender.nonBinaire:
-  //         HFNAb[2] += 1;
-  //         break;
-  //       default:
-  //         HFNAb[3] += 1;
-  //     }
-  //   });
-  //   return HFNAb;
-  // }
-
   populateGender() {
     const genderLabels = [Gender.homme, Gender.femme, Gender.nonBinaire, Gender.autre];
     this.dataChartGender.labels = genderLabels;
     this.dataChartGender.datasets[0].data = this.adherentsDTO.getOccurenceByGender();
   }
-
-  // findAgeOccurence(adherent: Array<Adherent>): Map<string, number> {
-  //   const ages = new Array<string>();
-  //   adherent.forEach(element => {
-  //     this.logger.debug(element.birthdayDate);
-  //     const age = DateUtil.getAge(element.birthdayDate).toString();
-  //     ages.push(age);
-  //   });
-  //   return ArrayUtil.getOccurences(ages);
-  // }
 
   populateChartAge() {
     this.labelChartAge = new Array();
