@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { DataService } from '../../shared/dataService/data.service';
 import { Router } from '@angular/router';
 import { User } from '../../shared/dto/user';
+import { DataService } from '../../core/dataService/data.service';
 
 @Component({
   selector: 'dmab-home',

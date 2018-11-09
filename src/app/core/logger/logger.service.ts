@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { LogLevel } from '../enum/LogLevel.enum';
+import { LogLevel } from '../../shared/enum/LogLevel.enum';
 
 @Injectable({
   providedIn: 'root'

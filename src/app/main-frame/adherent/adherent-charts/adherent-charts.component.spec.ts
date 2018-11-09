@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdherentDetailsComponent } from './adherent-details.component';
+import { AdherentChartsComponent } from './adherent-charts.component';
 
-describe('AdherentDetailsComponent', () => {
-  let component: AdherentDetailsComponent;
-  let fixture: ComponentFixture<AdherentDetailsComponent>;
+describe('AdherentChartsComponent', () => {
+  let component: AdherentChartsComponent;
+  let fixture: ComponentFixture<AdherentChartsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdherentDetailsComponent ]
+      declarations: [ AdherentChartsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdherentDetailsComponent);
+    fixture = TestBed.createComponent(AdherentChartsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

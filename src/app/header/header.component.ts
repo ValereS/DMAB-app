@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../shared/dataService/data.service';
+import { DataService } from '../core/dataService/data.service';
 
 @Component({
   selector: 'dmab-header',

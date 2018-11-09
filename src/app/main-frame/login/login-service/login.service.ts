@@ -3,7 +3,7 @@ import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angul
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { User } from '../../../shared/dto/user';
-import { LoggerService } from '../../../shared/logger/logger.service';
+import { LoggerService } from '../../../core/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'

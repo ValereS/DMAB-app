@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators,  } from '@angular/forms';
-import { DataService } from '../../shared/dataService/data.service';
 import { Router } from '@angular/router';
 import { LoginService } from './login-service/login.service';
-import { LoggerService } from '../../shared/logger/logger.service';
+import { DataService } from '../../core/dataService/data.service';
+import { LoggerService } from '../../core/logger/logger.service';
 
 @Component({
   selector: 'dmab-login',
