@@ -7,13 +7,16 @@ import { AdherentChartsComponent } from './adherent-charts/adherent-charts.compo
 import {ChartModule} from 'primeng/chart';
 import { NgbModule } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
 import { AdherentCRUDComponent } from './adherent-crud/adherent-crud.component';
+import { FormsModule, ReactiveFormsModule } from '../../../../node_modules/@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     PipeModule,
     ChartModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AdherentComponent,

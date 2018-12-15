@@ -1,3 +1,30 @@
-<p>
-  adherent-crud works!
-</p>
+<form #adherentForm="ngForm" class="form-inline" (ngSubmit)="onSubmit()" [formGroup]="adherentFG">
+  <div class="container">
+    <div class="row">
+        <label for="adh_name">Nom</label>
+        <input id="adh_name" class="form-control" type="text" formControlName="name" />
+        <label for="adh_firstname">Prénom</label>
+        <input id="adh_firstname" class="form-control" type="text" formControlName="firstname" />
+        <label for="adh_gender">Genre</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="adh_gender" formControlName="gender">
+          <option selected>Choose...</option>
+          <option *ngFor="let g of genders" [value]="g">{{g}}</option>
+        </select>
+    </div>
+    <div class="row">
+      <label for="adh_birthday">Date de Naissance</label>
+      <input id="adh_birthday" class="form-control" type="text" formControlName="birthday" />
+      <label for="adh_signUpDate">Date d'inscription</label>
+      <input id="adh_signUpDate" class="form-control" type="password" formControlName="signUpDate" />
+    </div>
+    <div class="row">
+      <label for="adh_postalCode">Code Postal</label>
+      <input id="adh_postalCode" class="form-control" type="text" formControlName="postalCode" />
+      <label for="adh_town">Ville</label>
+      <input id="adh_town" class="form-control" type="password" formControlName="town" />
+    </div>
+    <div class="row">
+      <button type="submit">Valider</button>
+    </div>
+  </div>
+</form>
