@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { LoggerService } from '../../../core/logger/logger.service';
 import { AdherentResponse } from './adherentResponse';
+import { environment } from '../../../../environments/environment.local';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { AdherentResponse } from './adherentResponse';
 export class AdherentService {
 
   private stubUser = 'assets/stub/json/adherent.json';
+  private userUrl =  environment.urlAdherent;
   private requestHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
     Accept: 'application/json'
@@ -20,12 +22,20 @@ export class AdherentService {
 
   getAdherents(): Observable<AdherentResponse> {
     return this.http
-      .get<AdherentResponse>(this.stubUser, { headers: this.requestHeaders })
+      .get<AdherentResponse>(this.userUrl + '/s', { headers: this.requestHeaders })
       .pipe(
         retry(3),
         catchError(this.handleError)
       );
   }
+  // getAdherents(): Observable<AdherentResponse> {
+  //   return this.http
+  //     .get<AdherentResponse>(this.userUrl + '/s', { headers: this.requestHeaders })
+  //     .pipe(
+  //       retry(3),
+  //       catchError(this.handleError)
+  //     );
+  // }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

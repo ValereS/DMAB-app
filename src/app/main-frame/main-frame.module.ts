@@ -20,6 +20,9 @@ import { PipeModule } from '../shared/pipe/pipe.module';
     PageNotFoundComponent,
     HomeComponent,
     LoginComponent
+  ], exports: [
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MainFrameModule { }
