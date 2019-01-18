@@ -5,6 +5,7 @@ import { catchError, retry } from 'rxjs/operators';
 import { LoggerService } from '../../../core/logger/logger.service';
 import { AdherentResponse } from './adherentResponse';
 import { environment } from '../../../../environments/environment.local';
+import { Adherent } from '../../../shared/dto/adherent';
 
 @Injectable({
   providedIn: 'root'
@@ -20,17 +21,17 @@ export class AdherentService {
 
   constructor(private http: HttpClient, private logger: LoggerService) {}
 
-  getAdherents(): Observable<AdherentResponse> {
+  getAdherents(): Observable<Adherent[]> {
     return this.http
-      .get<AdherentResponse>(this.userUrl + '/s', { headers: this.requestHeaders })
+      .get<Adherent[]>(this.userUrl + '/s', { headers: this.requestHeaders })
       .pipe(
         retry(3),
         catchError(this.handleError)
       );
   }
-  // getAdherents(): Observable<AdherentResponse> {
+  // getAdherents(): Observable<Adherent[]> {
   //   return this.http
-  //     .get<AdherentResponse>(this.userUrl + '/s', { headers: this.requestHeaders })
+  //     .get<Adherent[]>(this.stubUser, { headers: this.requestHeaders })
   //     .pipe(
   //       retry(3),
   //       catchError(this.handleError)

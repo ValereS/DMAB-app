@@ -4,13 +4,22 @@ import { DateUtil } from "../../util/date-util";
 
 export interface Adherent  {
   id: string;
-  firstname: string;
-  lastname: string;
+  prenom: string;
+  nom: string;
   birthdayDate: Date;
   inscriptionDate: Date;
-  gender: Gender;
-  postalCode: string;
-  town: string;
+  sexe: Gender;
+  // postalCode: string;
+  // town: string;
+  age: number;
+  association:	string;
+  connuPar: string;
+  fraisInscription:	number;
+  autre: string;
+  actif: number;
+  supprime: number;
+  statut: string;
+  adresse_id: number;
 }
 
 export class AdherentsDTO {
@@ -33,7 +42,7 @@ export class AdherentsDTO {
     let HFNAb: number[];
     HFNAb = [0, 0, 0, 0];
     this.adherents.forEach(element => {
-      switch (element.gender) {
+      switch (element.sexe) {
         case Gender.homme:
           HFNAb[0] += 1;
           break;

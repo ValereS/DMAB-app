@@ -28,11 +28,7 @@ export class AdherentComponent implements OnInit {
   getInformations(): void {
     this.adherentService.getAdherents().subscribe(
       fetched => {
-        if (fetched.error === ServiceConstants.ZERO) {
-          this.adherents = fetched.result;
-        } else {
-          this.logger.info(fetched.error, fetched.message);
-        }
+          this.adherents = fetched;
       },
       error => this.logger.error('##adherent## not fetched: '),
       () => {
