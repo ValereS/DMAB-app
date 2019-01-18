@@ -14,10 +14,10 @@
   <tbody>
     <tr *ngFor="let adherent of adherents">
       <th scope="row">{{adherent.id}}</th>
-      <td>{{adherent.lastname}}</td>
-      <td>{{adherent.firstname}}</td>
-      <td>{{adherent.gender}}</td>
-      <td>{{adherent.birthdayDate | age}}</td>
+      <td>{{adherent.name}}</td>
+      <td>{{adherent.prenom}}</td>
+      <td>{{adherent.sexe}}</td>
+      <td>{{adherent.age}}</td>
       <td>{{adherent.inscriptionDate | date }}</td>
       <td>{{adherent.postalCode}}</td>
       <td>{{adherent.town}}</td>
