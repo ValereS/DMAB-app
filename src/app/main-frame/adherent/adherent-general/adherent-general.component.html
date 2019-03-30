@@ -14,13 +14,13 @@
   <tbody>
     <tr *ngFor="let adherent of adherents">
       <th scope="row">{{adherent.id}}</th>
-      <td>{{adherent.name}}</td>
       <td>{{adherent.prenom}}</td>
+      <td>{{adherent.nom}}</td>
       <td>{{adherent.sexe}}</td>
       <td>{{adherent.age}}</td>
       <td>{{adherent.inscriptionDate | date }}</td>
-      <td>{{adherent.postalCode}}</td>
-      <td>{{adherent.town}}</td>
+      <td>{{adherent.adresse.ville.codePostal}}</td>
+      <td>{{adherent.adresse.ville.nom}}</td>
     </tr>
   </tbody>
 </table>

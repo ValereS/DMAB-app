@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LoggerService } from '../../../core/logger/logger.service';
 import { Adherent } from '../../../shared/dto/adherent';
-import { FormBuilder, FormGroup, Validators } from '../../../../../node_modules/@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Gender } from '../../../shared/enum/gender.enum';
 
 @Component({
