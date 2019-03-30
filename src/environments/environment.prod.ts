@@ -1,6 +1,6 @@
 import { LogLevel } from "../app/shared/enum/LogLevel.enum";
 
-const localApiUrl = 'http://localhost:3000/api/';
+const localApiUrl = '';
 
 export const environment = {
   production: true,

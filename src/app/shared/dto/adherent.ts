@@ -1,6 +1,7 @@
 import { Gender } from "../enum/gender.enum";
 import { ArrayUtil } from "../../util/array-util";
 import { DateUtil } from "../../util/date-util";
+import { Adresse } from "../interface/adresse";
 
 export interface Adherent  {
   id: string;
@@ -9,8 +10,7 @@ export interface Adherent  {
   birthdayDate: Date;
   inscriptionDate: Date;
   sexe: Gender;
-  // postalCode: string;
-  // town: string;
+  adherent: Adresse;
   age: number;
   association:	string;
   connuPar: string;

@@ -5,9 +5,9 @@ import { AdherentComponent } from './adherent.component';
 import { PipeModule } from '../../shared/pipe/pipe.module';
 import { AdherentChartsComponent } from './adherent-charts/adherent-charts.component';
 import {ChartModule} from 'primeng/chart';
-import { NgbModule } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdherentCRUDComponent } from './adherent-crud/adherent-crud.component';
-import { FormsModule, ReactiveFormsModule } from '../../../../node_modules/@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
