@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Adherent } from '../../shared/dto/adherent';
 import { AdherentService } from './service/adherent.service';
 import { LoggerService } from '../../core/logger/logger.service';
-import { ServiceConstants } from '../../util/serviceConstants';
 
 @Component({
   selector: 'dmab-adherent',
