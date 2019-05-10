@@ -30,26 +30,28 @@ export class AdherentsDTO {
   }
 
   getOccurenceByAge(): Map<string, number>  {
-    const ages = new Array<string>();
+    let ages = new Array<string>();
     this.adherents.forEach(element => {
-      const age = DateUtil.getAge(element.birthdayDate).toString();
-      ages.push(age);
+      // const age = DateUtil.getAge(element.birthdayDate).toString();
+      // ages.push(age);
+      ages.push(element.age.toString());
     });
+    ages = ages.sort();
     return ArrayUtil.getOccurences(ages);
   }
 
   getOccurenceByGender() {
     let HFNAb: number[];
-    HFNAb = [0, 0, 0, 0];
+    HFNAb = [0, 0, 0];
     this.adherents.forEach(element => {
       switch (element.sexe) {
-        case Gender.homme:
+        case Gender.Homme:
           HFNAb[0] += 1;
           break;
-        case Gender.femme:
+        case Gender.Femme:
           HFNAb[1] += 1;
           break;
-        case Gender.nonBinaire:
+        case Gender.NonBinaire:
           HFNAb[2] += 1;
           break;
         default:

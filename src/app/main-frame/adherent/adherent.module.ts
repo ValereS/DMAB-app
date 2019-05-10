@@ -8,6 +8,7 @@ import {ChartModule} from 'primeng/chart';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdherentCRUDComponent } from './adherent-crud/adherent-crud.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProgressSpinnerModule } from '../../../../node_modules/primeng/progressspinner';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ChartModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProgressSpinnerModule
   ],
   declarations: [
     AdherentComponent,

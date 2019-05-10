@@ -20,6 +20,8 @@ import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoadinglogoComponent } from './welcome/loadinglogo/loadinglogo.component';
+import { CoreModule } from './core/core.module';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -40,7 +42,9 @@ registerLocaleData(localeFr);
       ReactiveFormsModule,
       HttpClientModule,
       NgbModule.forRoot(
-      )
+      ),
+      CoreModule,
+      ProgressSpinnerModule,
       ],
     providers: [
       { provide: LOCALE_ID, useValue: 'fr' }

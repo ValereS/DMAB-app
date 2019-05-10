@@ -6,23 +6,34 @@ import { LoggerService } from '../../../core/logger/logger.service';
 import { environment } from '../../../../environments/environment';
 import { Adherent } from '../../../shared/dto/adherent';
 import { DEFAULT_REQUEST_HEADERS } from '../../../util/serviceConstants';
+import { ServerResult } from '../../../shared/interface/server-result';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdherentService {
 
-  private AllAdherentUrl =  environment.urlAllAdherent;
-
   constructor(private http: HttpClient, private logger: LoggerService) {}
 
   getAdherents(): Observable<Adherent[]> {
     return this.http
-      .get<Adherent[]>(this.AllAdherentUrl, { headers: DEFAULT_REQUEST_HEADERS })
+      .get<Adherent[]>(environment.urlAllAdherent, { headers: DEFAULT_REQUEST_HEADERS })
       .pipe(
         retry(3),
         catchError(this.handleError)
       );
+  }
+
+  storeAdherent(adherent: any): Observable<ServerResult> {
+    const body = adherent;
+    this.logger.info(body);
+    // this.logger.info(JSON.parse(body));
+    return this.http
+    .post<ServerResult>(environment.urlCreateAdherent, body, {headers: DEFAULT_REQUEST_HEADERS})
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
   }
 
   private handleError(error: HttpErrorResponse) {

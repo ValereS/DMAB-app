@@ -1,30 +1,66 @@
 <form #adherentForm="ngForm" class="form-inline" (ngSubmit)="onSubmit()" [formGroup]="adherentFG">
   <div class="container">
-    <div class="form-group row">
+    <div class="form-row">
+      <div class="form-group offset-md-2 col-md-3">
         <label for="adh_name">Nom</label>
-        <input id="adh_name" class="form-control" type="text" formControlName="name" />
+        <input id="adh_name" class="form-control width_full" type="text" formControlName="name" required/>
+      </div>
+      <div class="form-group col-md-3">
         <label for="adh_firstname">Prénom</label>
-        <input id="adh_firstname" class="form-control" type="text" formControlName="firstname" />
+        <input id="adh_firstname" class="form-control width_full" type="text" formControlName="firstname" required />
+      </div>
+      <div class="form-group col-md-2">
         <label for="adh_gender">Genre</label>
-        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="adh_gender" formControlName="gender">
-          <option selected>Choose...</option>
+        <select class="custom-select mb-2 mr-md-2 mb-md-0" id="adh_gender" formControlName="gender" class="form-control width_70">
           <option *ngFor="let g of genders" [value]="g">{{g}}</option>
         </select>
+      </div>
     </div>
-    <div class="row">
-      <label for="adh_birthday">Date de Naissance</label>
-      <input id="adh_birthday" class="form-control" type="text" formControlName="birthday" />
-      <label for="adh_signUpDate">Date d'inscription</label>
-      <input id="adh_signUpDate" class="form-control" type="password" formControlName="signUpDate" />
+    <div class="form-row">
+      <div class="form-group offset-md-2 col-md-3">
+        <label for="adh_birthday">Date de Naissance</label>
+        <input id="adh_birthday" class="form-control width_70" type="date" formControlName="birthday" />
+      </div>
+      <div class="form-group col-md-3">
+        <label for="adh_signUpDate">Date d'inscription</label>
+        <input id="adh_signUpDate" class="form-control width_70" type="date" formControlName="signUpDate" />
+      </div>
     </div>
-    <div class="row">
-      <label for="adh_postalCode">Code Postal</label>
-      <input id="adh_postalCode" class="form-control" type="text" formControlName="postalCode" />
-      <label for="adh_town">Ville</label>
-      <input id="adh_town" class="form-control" type="password" formControlName="town" />
+    <div class="form-row" id="town_div">
+      <div class="form-group offset-md-2 col-md-3">
+        <label for="adh_town">Ville</label>
+        <input id="adh_town" (keyup)="getTownList($event)" class="form-control width_full" type="text" formControlName="town" list="town-ws-list" (change)="fetchCPData()" required/>
+        <datalist id="town-ws-list">
+          <!-- <select> -->
+            <option *ngFor="let town of townNameWSList" [value]="town">{{town.nom}}</option>
+          <!-- </select> -->
+        </datalist>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="adh_postalCode">Code Postal</label>
+        <input id="adh_postalCode" class="form-control width_70" type="text" formControlName="postalCode" required />
+      </div>
     </div>
-    <div class="row">
-      <button type="submit">Valider</button>
+    <div class="form-row justify-content-around">
+      <div class="from-group col-md-2">
+        <button class="btn btn-secondary" type="reset" [disabled]="adherentFG.pristine">Réinitialiser</button>
+      </div>
+      <div class="from-group col-md-2">
+        <button class="btn btn-primary col-md-12" type="submit" [disabled]="cannotValidate()">
+          Valider
+        </button>
+      </div>
+    </div>
+    <div class="form-row justify-content-around" style="height: 40px">
+      <div class="col-md-6 ">
+        <div *ngIf="loadingAction" class="centered">
+          <p-progressSpinner [style]="{width: '20px', height: '20px'}" strokeWidth="2" animationDuration=".5s"></p-progressSpinner>
+        </div>
+        <p *ngIf="errorUnableToSave; else crudPassed" style="color: red">L'opération n'a pas abouti: l'adhérent n'a pas été enregistré.</p>
+        <ng-template #crudPassed *ngIf="ableToSave">
+          <p style="color: green">L'adhérent a été enregistré.</p>
+        </ng-template>
+      </div>
     </div>
   </div>
 </form>
