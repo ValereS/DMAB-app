@@ -1,4 +1,5 @@
 import { LogLevel } from "../app/shared/enum/LogLevel.enum";
+import { GOUV_WS_TOWN_SEARCH_BY_NAME_URL } from "../app/util/serviceConstants";
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -10,6 +11,8 @@ export const environment = {
   production: false,
 
   urlAllAdherent: integrationApiUrl + 'adherent/s',
+  urlCreateAdherent: integrationApiUrl + 'adherent/c',
+  urlTownByCP: GOUV_WS_TOWN_SEARCH_BY_NAME_URL,
 
   angularLogLevel: LogLevel.ALL
 };

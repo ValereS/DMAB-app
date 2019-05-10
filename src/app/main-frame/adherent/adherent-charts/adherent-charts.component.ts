@@ -71,7 +71,7 @@ export class AdherentChartsComponent implements OnInit {
   }
 
   populateGender() {
-    const genderLabels = [Gender.homme, Gender.femme, Gender.nonBinaire, Gender.autre];
+    const genderLabels = [Gender.Homme, Gender.Femme, Gender.NonBinaire];
     this.dataChartGender.labels = genderLabels;
     this.dataChartGender.datasets[0].data = this.adherentsDTO.getOccurenceByGender();
   }
